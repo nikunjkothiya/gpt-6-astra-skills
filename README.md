@@ -1,99 +1,151 @@
 # Visual Engineering Intelligence
 
-A reusable skill package for designing and implementing distinctive websites, interfaces, cinematic motion and interactive 3D. Version 1.3.0 contains **22 skills, 32 implementation references and four predefined bundles**. It adapts to the user's topic, existing project, assets and constraints.
+Visual Engineering Intelligence is a portable set of instructions for designing and building websites, interfaces, cinematic motion, and interactive 3D. It helps an LLM choose a visual direction from the **actual project brief**, implement the relevant behavior, and check the result. Version **1.3.0** contains **22 skills, 32 supporting references, and four ready-to-load bundles**.
 
-The distribution contains skills, reference algorithms, prompts, a read-only MCP server and package verification tools. It contains no demonstration websites, branded page templates, stock media or required frontend framework. The model host supplies editing, asset preparation, browsing and rendering capabilities.
+Use it with an LLM that can read local skills, connect to a local MCP server, or accept Markdown as context. The package supplies guidance and implementation recipes; the host's tools perform the editing, asset work, and visual inspection in your project.
 
-## What the package covers
+## Start in three steps
 
-| Capability | Guidance |
-| --- | --- |
-| Requirements to design | Audience, task, trust, content, identity, assets and constraints → a specific visual thesis and working UI |
-| Luxury/editorial design | Subject, hierarchy, typography, color roles, imagery, layout rhythm, material and finish |
-| Different visual languages | Editorial, sculptural, architectural, expressive, service, technical and cinematic relationships; theme variations and script-aware typography |
-| Motion graphics | DOM/SVG/canvas diagrams, kinetic type, vector runtimes, meaningful loops and transitions |
-| Cursor response | Followers, masks, reveals, parallax, tilt, local coordinates and input ownership |
-| Recorded motion | GIF handling, video encoding, timeline scrubbing, seek queues, posters and failure recovery |
-| Scroll-controlled pictures | Video-to-JPG preparation, numbered manifests, frame mapping, bounded decode/cache and responsive crop |
-| Real objects and 3D | Three.js geometry, pivots, attachment, materials, light, camera, raycasting, constrained tracking and reset |
-| Assembly and disassembly | Part hierarchy, release order, clearance paths, exploded states, interruption and exact reassembly |
-| Rendering and blending | CSS/canvas compositing, alpha edges, crossfades, transparent depth, glass and color/output boundaries |
-| Cinematic scroll | Numeric storyboards, GSAP ownership, reversible scenes, camera travel and reading holds |
-| Verification | Responsive composition, keyboard/touch, reduced motion, lifecycle, performance and observed playback |
+1. Get the complete package and keep its `skills/`, `mcp/`, `prompts/`, and `scripts/` directories together. From Git:
 
-The skills select techniques that serve the actual interface. They do not require every effect on every page. No prompt can guarantee awards, identical results across LLMs, or reproduction of a model's private reasoning.
+   ```sh
+   git clone https://github.com/nikunjkothiya/gpt-6-astra-skills.git
+   cd gpt-6-astra-skills
+   ```
 
-See the [complete capability map](CAPABILITIES.md) for requirement-to-skill routes, bundle selection and the evidence each capability needs in the target project.
+2. Choose **one loading method** below. For a first text-based run, install Node.js 20 or later and print the `premium-ui` bundle:
 
-## Choose a loading route
+   ```sh
+   node scripts/export.mjs --bundle premium-ui
+   ```
 
-| Route | Requirements | Load |
+   Supply that output to your LLM as a file or context. The exporter needs no `npm install`. If your host discovers skill folders or supports local MCP, use the corresponding method below instead.
+
+3. Give the LLM your **target project's** location or files, audience, main task, existing identity, available assets, requested interactions, and target devices. The LLM should work in that project. See the [task prompt](prompts/requirements-to-design.md) if you want a fill-in brief.
+
+## Choose how your LLM loads the package
+
+| Method | Best when | Setup |
 | --- | --- | --- |
-| Native skills | A host that reads skill folders | The complete `skills/` directory and its references |
-| Local MCP | Node.js 20+ and local stdio MCP support | The server entry printed by `mcp/config.mjs` |
-| Markdown context | A host that accepts text or files | An exported bundle or selected full documents |
+| Native skills | Your host discovers and reads `SKILL.md` folders | Expose the complete `skills/` directory through the host's supported skill mechanism. Start with `visual-engineering-intelligence` for broad work, or a specialist for a focused repair. |
+| Local MCP | Your host supports a local stdio MCP server | Install runtime dependencies, generate the server entry, add it to the host, and restart the connection. |
+| Markdown context | Your LLM accepts pasted text or attached files | Export a named bundle or selected documents and supply their full text. |
+
+The [installation guide](install-visual-engineering/SKILL.md) covers host configuration, updates, and removal. Keep the skill folders as siblings so links to their references resolve. A link to a reference does not load its contents into a text-only host.
 
 ### Native skills
 
-Use the host's documented discovery mechanism and [installer instructions](install-visual-engineering/SKILL.md). Preserve sibling folders and references. Load `visual-engineering-intelligence` for substantial work; use the owning specialist directly for a narrow correction. Native skills have no runtime dependency.
-
-### Markdown context for any suitable LLM
-
-```text
-node scripts/export.mjs --bundle premium-ui
-node scripts/export.mjs --bundle interactive-motion
-node scripts/export.mjs --bundle luxury-cinematic
-node scripts/export.mjs --bundle product-3d
-node scripts/export.mjs --skill threejs-engineering --reference threejs-engineering/references/scene-lifecycle.md
-```
-
-The dependency-free exporter prints full Markdown bodies. Save or attach that output through the host's supported mechanism. People can also copy the files without Node. `--all` includes the complete suite; use it only when the host's context budget permits. Links to missing documents do not load those documents.
-
-| Bundle | Included bodies | Intended use |
-| --- | --- | --- |
-| `premium-ui` | 8 skills + 10 references | Visual language, typography/themes, complete interaction, mobile composition, accessibility, motion and QA |
-| `interactive-motion` | 6 skills + 12 references | Topic-led UI, motion graphics, cursor/scroll interactions, GIF/video/image sequences, visual direction and QA |
-| `luxury-cinematic` | 8 skills + 12 references | Premium/editorial direction plus cinematic media, live object behavior, Three.js and motion engineering |
-| `product-3d` | 8 skills + 9 references | Geometry, hierarchy, assembly/disassembly, material, lighting, camera, rendering and Three.js runtime |
-
-Bundles contain the listed bodies; the host retrieves further guidance when needed. The motion bundles need responsive/accessibility owners for full interface work, and `product-3d` focuses on the scene. Combine selections with repeated `--bundle` flags to deduplicate shared documents, or load individual owners in stages when context is limited. Text exports always include the coordinator; `product-3d` therefore exports nine skill bodies. The [cinematic build prompt](prompts/cinematic-build.md) and [requirements-driven design prompt](prompts/requirements-to-design.md) provide task instructions to use alongside the actual skill bodies.
+Point your host's skill discovery mechanism at this package's `skills/` directory. The coordinator is `skills/visual-engineering-intelligence/SKILL.md`; it selects specialists as the task develops. This method has no runtime dependencies. Check the host's documentation for its discovery path and confirm that it sees the skills after installation.
 
 ### Local MCP
 
-```text
+From the package root, with Node.js 20 or later:
+
+```sh
 npm ci --omit=dev --ignore-scripts --no-audit --no-fund
 node mcp/config.mjs
 ```
 
-On Windows PowerShell use `npm.cmd` if execution policy blocks `npm.ps1`. Merge the printed server entry into the host configuration. For a TOML host use `node mcp/config.mjs --format toml`. Restart the connection after updating packaged content.
+The second command prints a JSON entry with **absolute paths** for this package and your local Node executable. Merge that entry into your host's MCP configuration, preserving its other entries, then restart the MCP connection. For a TOML host, run `node mcp/config.mjs --format toml`. On Windows PowerShell, use `npm.cmd` if the `npm.ps1` launcher is blocked.
 
-| Tool | Result |
-| --- | --- |
-| `visual_engineering_start` | Coordinator and catalog for the task |
-| `visual_engineering_list` | Skill/reference/bundle discovery |
-| `visual_engineering_read` | Full bodies for 1–8 exact skill names |
-| `visual_engineering_reference` | Full bodies for 1–4 exact reference IDs |
-| `visual_engineering_bundle` | One complete named bundle |
+Ask the host to call `visual_engineering_start` for a broad design task, then `visual_engineering_read`, `visual_engineering_reference`, or `visual_engineering_bundle` for the required full instructions. `visual_engineering_list` discovers names and reference IDs. The server also exposes the same content as MCP resources and a `visual-engineering` prompt. It is read-only and performs no project editing.
 
-Resources also expose the catalog, individual documents and `visual-engineering://bundles/NAME` for each bundle above. The `visual-engineering` MCP prompt starts the same workflow. Avoid loading duplicate bodies when using both native and MCP routes.
+### Markdown context
 
-The server serves only documents declared in [the catalog](mcp/catalog.json), with bounded sizes, resolved-path containment and validated documentation links. It has no runtime network, editing, shell or browser behavior. It does not call an LLM or supply missing tools.
+Run these commands from the package root and supply the printed output to your LLM:
 
-## Activate the guidance
+```sh
+node scripts/export.mjs --bundle premium-ui
+node scripts/export.mjs --bundle interactive-motion
+node scripts/export.mjs --bundle luxury-cinematic
+node scripts/export.mjs --bundle product-3d
+```
 
-Add this through the host's supported instruction mechanism when needed:
+Combine bundles when the project needs both sets of guidance; shared documents appear once:
 
-> For substantial visual work, load Visual Engineering Intelligence and the specialists/references relevant to the user's topic, assets and requested behavior. For cursor, scroll, GIF, video or image-sequence work load interactive-motion; for premium/editorial work also load luxury editorial direction. Make concrete design decisions, implement inside the actual project, inspect available evidence and complete the authorized work. Use the owning specialist directly for a narrow repair. Preserve the existing identity and user scope.
+```sh
+node scripts/export.mjs --bundle premium-ui --bundle interactive-motion
+```
 
-## Verify and maintain the package
+For a focused task, select full documents using exact names and IDs from [the catalog](mcp/catalog.json):
+
+```sh
+node scripts/export.mjs --skill threejs-engineering --reference threejs-engineering/references/scene-lifecycle.md
+```
+
+`node scripts/export.mjs` prints the coordinator and catalog. `--all` prints every body and requires a large context window. Prefer selected documents or staged loading when your host has limited context. You can also copy the Markdown files directly without running the exporter.
+
+## Which bundle should I use?
+
+| Bundle | Starting point for | Included instructions |
+| --- | --- | --- |
+| `premium-ui` | A complete, responsive interface | Visual direction, typography, color and theme decisions, interaction states, mobile composition, accessibility, motion, and visual QA |
+| `interactive-motion` | Motion graphics, cursor effects, scroll behavior, GIF/video, and image sequences | Topic-to-motion selection, pointer mapping, media preparation, scrubbing, frame caches, cinematic progress, and verification |
+| `luxury-cinematic` | An editorial or luxury site with directed motion | Subject-led art direction, cinematic storytelling, recorded media, object response, and motion verification |
+| `product-3d` | A live 3D product, configurator, or exploded view | Geometry, pivots, assembly and reassembly, materials, light, camera, rendering, and Three.js lifecycle |
+
+A bundle is a **starting selection**, not a fixed design template. Load additional specialists when the task requires them. For example, pair `product-3d` with `premium-ui` for the surrounding controls and mobile layout. Add responsive and accessibility guidance to a cinematic experience when building a complete site. The [capability map](CAPABILITIES.md) lists each requirement, its owning skill, and what to verify.
+
+## Example use cases
+
+These are example **requests** for a target project. Replace the product, assets, stack, and constraints with your real brief. They do not require demonstration files in this package.
+
+| Project | Start with | Example request to your LLM |
+| --- | --- | --- |
+| SaaS dashboard | `premium-ui` | Redesign our analytics dashboard around comparing campaign performance. Use our existing React app and real data. Improve hierarchy, chart states, keyboard access, and narrow-screen layouts. Keep our brand colors and verify the finished screens. |
+| Luxury product site | `luxury-cinematic`; add `responsive-composition` and `visual-accessibility` | Build an editorial launch page for our watch collection using our approved photos and copy. Create a restrained scroll story, considered typography, and clear product actions. Verify mobile, reduced motion, and loading states. |
+| Interactive 3D configurator | `product-3d` plus `premium-ui` | In our product app, build an inspectable modular lamp. Preserve real part dimensions and attachment points; let users select finishes and view a reversible exploded assembly. Provide keyboard and touch controls, a static fallback, and responsive product details. |
+| Scroll-controlled image sequence | `interactive-motion` plus `premium-ui` | Use our licensed manufacturing clip to create a scroll-controlled frame sequence with chapter labels. Verify the extracted frame inventory, crop, memory budget, reverse scroll, missing frames, and a mobile poster view. |
+| Creative portfolio | `interactive-motion` plus `premium-ui` | Refine our portfolio with cursor-following project previews and SVG motion graphics. Keep links clickable, show the same project information on focus and touch, stop idle work, and preserve readable case studies. |
+| Service or healthcare site | `premium-ui` | Improve our appointment flow for quick comprehension and trust. Make forms, errors, focus, contrast, and enlarged-text layouts work first; use only motion that helps explain a state change. |
+| Reference-led redesign | `visual-reconstruction` plus relevant direction/composition skills | Study the supplied public reference and our current page. Record what is observed and inferred, then create an original layout with comparable hierarchy and pacing using our own content. Compare matched views and state what remains unverified. |
+
+For any of these, include the target repository or page scope, actual content, brand rules, asset rights, frameworks, supported devices, and what must be preserved. A useful general request is:
 
 ```text
+Use Visual Engineering Intelligence in my existing project.
+Goal: [who the site serves and the main action]
+Scope: [page or component to create or improve]
+Preserve: [brand, content, behavior, stack, and constraints]
+Assets: [photos, video, models, fonts, and rights]
+Interactions: [scroll, cursor, motion graphics, media, or 3D requirements]
+Delivery: [target devices, browser support, performance constraints]
+
+Inspect the project, choose the relevant skill bodies, implement the requested
+experience, then verify actual views and interactions. Report the tests and
+observations you performed and any material limits.
+```
+
+For a directed scene, the [cinematic build prompt](prompts/cinematic-build.md) adds storyboard and playback requirements.
+
+## What is in the repository?
+
+| Path | Purpose |
+| --- | --- |
+| `skills/` | 22 independently usable skill entrypoints and 32 supporting references |
+| `mcp/` | Catalog and local read-only MCP server |
+| `prompts/` | Reusable task prompts for broad design and cinematic builds |
+| `scripts/export.mjs` | Prints selected full instructions for text-only hosts |
+| `install-visual-engineering/SKILL.md` | Host installation and activation guidance |
+| `tests/`, `scripts/validate.mjs` | Package and reference-code verification |
+
+The repository ships instructions and code recipes. It does not contain a website template, media library, or a rendered example site. The user's project supplies the content and assets. The host must provide the tools needed to edit code, prepare media, browse, and inspect rendered results.
+
+## Check or build the package
+
+For development, install the locked dependencies and run the checks:
+
+```sh
 npm ci --ignore-scripts --no-audit --no-fund
 npm run check
 ```
 
-Checks cover inventory, metadata, links, full stdio MCP retrieval, named bundles, portable exports, input rejection and algorithms executed directly from the distributed reference text. They do not build a website or certify appearance. Rendering and playback verification belong in the target project's workflow.
+The checks cover the catalog, links, MCP retrieval, exports, distribution staging, and algorithms executed from reference text. They do not prove that an arbitrary generated site looks good or runs smoothly; inspect that site's real pages and motion on its target devices. See [validation and evidence limits](PACKAGE-VALIDATION.md).
 
-To stage a clean distribution, use `npm run build:package -- --out PATH` with a new directory inside this workspace and an existing parent directory. The destination must be outside source and dependency folders. It includes the package sources and lockfile while excluding installed dependencies and generated artifacts.
+To stage the maintained sources for distribution, choose a **new** directory inside this workspace, outside source and dependency folders:
 
-[Package validation and evidence limits](PACKAGE-VALIDATION.md) distinguish tested algorithms from instructions requiring real assets, devices and browser observation. When extending the package, register documents in the catalog, link them from the owning skill and test relevant behavior. Keep numerical design proposals distinct from actual measurements.
+```sh
+npm run build:package -- --out package-stage
+```
+
+The builder refuses to overwrite an existing directory. Generated exports, archives, installed dependencies, caches, and local settings are excluded from Git by the repository's allowlist.

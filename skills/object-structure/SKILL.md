@@ -60,6 +60,8 @@ Preserve the requested configuration across presentation resets. Resetting the v
 
 ## Inspect transform integrity
 
+When implementing canonical rest, functional pivots, or reversible tracks, read [canonical poses and transform implementation](references/canonical-poses.md). It provides frame composition, complete Three.js patterns, and numerical invariants. Use [Three.js engineering](../threejs-engineering/SKILL.md) for the surrounding scene and input lifecycle.
+
 Observe parent movement, child articulation, reversal, cancellation, and repeated return to rest. Compare attachment positions, orientations, hierarchy, and scale against their canonical relationships using precision appropriate to the scene and task. Inspect the rendered joins as well as numeric values.
 
 Drift suggests accumulated offsets or inconsistent rest definitions. Orbiting around an unintended point suggests a wrong pivot or frame. A detached child suggests broken inheritance or a handoff error. If the same authored state produces different poses depending on input order, inspect competing transform owners or unmodeled state; a physical mechanism may legitimately depend on its history. Repair the relationship responsible before retuning motion.

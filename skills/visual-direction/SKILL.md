@@ -1,13 +1,19 @@
 ---
 name: visual-direction
-description: Define distinctive art direction for new interfaces, websites, digital products, and visual experiences. Use for open creative briefs, substantial redesigns, requests for a premium or striking aesthetic, and generic-looking results. Preserve established identity during local polish and supplied references during faithful reproduction.
+description: Choose distinctive art direction for new websites, digital products, substantial redesigns, or generic-looking results. Turn product intent and real content into a coherent visual concept; preserve existing identity during local polish.
 ---
 
 # Visual Direction
 
 Choose a visual idea that follows from the product's actual purpose, content, and use. It must guide visible decisions well enough to reject an attractive but unsuitable option.
 
+For a new concept or substantial redesign, load [brief to design decisions](references/brief-to-design-decisions.md) to select a direction with representative content, test the largest uncertainty, and carry a usable specification into implementation. A local refinement can use the principles below directly.
+
+When choosing among visual styles or developing color/theme and typography variations, read [visual languages and themes](references/visual-languages-and-themes.md). Resolve those choices from the actual content and audience, then carry the selected system through ordinary UI states.
+
 ## Find the product's visual opportunity
+
+For premium, luxury or editorial briefs, load [luxury editorial direction](references/luxury-editorial-direction.md) to resolve subject, typography, palette, imagery, motion character and finish from the product's evidence. Apply it to the actual project rather than importing a page template.
 
 Establish who is using the product, what they are trying to understand or accomplish, how often they return, and what uncertainty the experience should remove. Identify the primary action or viewing question separately from secondary exploration and commercial goals.
 

@@ -7,6 +7,8 @@ description: Refine rendered images and moving scenes for final delivery, and di
 
 Judge the visible output in its intended presentation. Structural validity, successful construction, and a saved image establish different facts from visual clarity, material identity, and temporal quality.
 
+For layered DOM/canvas imagery, CSS blend modes, alpha edges, crossfades, glass or transparent depth artifacts, read [compositing and blending](references/compositing-and-blending.md). It distinguishes pixel compositing from pose blending and provides checks for each rendering boundary.
+
 ## Establish a comparable view
 
 Use the intended framing, delivery size, relevant background, display treatment, and representative state. Keep these stable while diagnosing a defect. Inspect at normal size for readability and hierarchy, then use a close crop only to identify the cause.

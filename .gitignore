@@ -1,0 +1,49 @@
+# Ignore everything unless it is part of the maintained package below.
+# Dependencies, archives, exports, caches, logs, local configuration and demos
+# stay outside Git. Add new source files here deliberately before staging them.
+*
+
+# Repository policy and package metadata
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/CAPABILITIES.md
+!/PACKAGE-VALIDATION.md
+!/package.json
+!/package-lock.json
+
+# Installer and task prompts
+!/install-visual-engineering/
+!/install-visual-engineering/SKILL.md
+!/prompts/
+!/prompts/cinematic-build.md
+!/prompts/requirements-to-design.md
+
+# Read-only MCP implementation and catalog
+!/mcp/
+!/mcp/catalog.json
+!/mcp/config.mjs
+!/mcp/content.mjs
+!/mcp/server.mjs
+
+# Package maintenance and verification
+!/scripts/
+!/scripts/build-package.mjs
+!/scripts/export.mjs
+!/scripts/reference-runtime.mjs
+!/scripts/validate.mjs
+!/tests/
+!/tests/content.test.mjs
+!/tests/interaction-code.test.mjs
+!/tests/interactive-motion.test.mjs
+!/tests/mcp.test.mjs
+!/tests/reference-code.test.mjs
+!/tests/sequence-recipes.test.mjs
+
+# Skill entrypoints and their registered Markdown references.
+# npm run validate checks registration, metadata and reference links.
+!/skills/
+!/skills/*/
+!/skills/*/SKILL.md
+!/skills/*/references/
+!/skills/*/references/*.md

@@ -1,0 +1,244 @@
+{
+  "skills": [
+    {
+      "name": "visual-engineering-intelligence",
+      "references": [
+        "references/delivery-workflow.md",
+        "references/host-capabilities.md"
+      ]
+    },
+    {
+      "name": "assembly-choreography",
+      "references": []
+    },
+    {
+      "name": "camera-composition",
+      "references": []
+    },
+    {
+      "name": "cinematic-web",
+      "references": [
+        "references/interface-and-integration.md",
+        "references/motion-verification.md",
+        "references/reference-study.md",
+        "references/scroll-and-camera.md",
+        "references/shaders-and-optics.md",
+        "references/spatial-components.md",
+        "references/storyboard-and-rendering.md"
+      ]
+    },
+    {
+      "name": "geometric-reasoning",
+      "references": []
+    },
+    {
+      "name": "interaction-design",
+      "references": [
+        "references/state-and-interruption.md"
+      ]
+    },
+    {
+      "name": "lighting-design",
+      "references": []
+    },
+    {
+      "name": "interactive-motion",
+      "references": [
+        "references/topic-and-motion.md",
+        "references/cursor-choreography.md",
+        "references/media-scrubbing.md",
+        "references/motion-graphics.md",
+        "references/asset-preparation.md",
+        "references/object-tracking.md",
+        "references/scroll-image-sequences.md"
+      ]
+    },
+    {
+      "name": "material-reasoning",
+      "references": []
+    },
+    {
+      "name": "motion-intelligence",
+      "references": [
+        "references/timing-and-interruption.md"
+      ]
+    },
+    {
+      "name": "object-structure",
+      "references": [
+        "references/canonical-poses.md"
+      ]
+    },
+    {
+      "name": "rendering-judgment",
+      "references": [
+        "references/compositing-and-blending.md"
+      ]
+    },
+    {
+      "name": "responsive-composition",
+      "references": [
+        "references/content-driven-responsive.md"
+      ]
+    },
+    {
+      "name": "spatial-reasoning",
+      "references": []
+    },
+    {
+      "name": "threejs-engineering",
+      "references": [
+        "references/assets-and-rendering.md",
+        "references/input-and-interface.md",
+        "references/react-three-fiber.md",
+        "references/scene-lifecycle.md"
+      ]
+    },
+    {
+      "name": "visual-accessibility",
+      "references": []
+    },
+    {
+      "name": "visual-composition",
+      "references": [
+        "references/type-color-layout.md"
+      ]
+    },
+    {
+      "name": "visual-direction",
+      "references": [
+        "references/brief-to-design-decisions.md",
+        "references/luxury-editorial-direction.md",
+        "references/visual-languages-and-themes.md"
+      ]
+    },
+    {
+      "name": "visual-performance",
+      "references": []
+    },
+    {
+      "name": "visual-qa",
+      "references": [
+        "references/quality-evidence.md",
+        "references/render-and-playback.md"
+      ]
+    },
+    {
+      "name": "visual-reconstruction",
+      "references": [
+        "references/matched-view-comparison.md"
+      ]
+    },
+    {
+      "name": "visual-storytelling",
+      "references": []
+    }
+  ],
+  "bundles": [
+    {
+      "name": "interactive-motion",
+      "description": "Choose motion from the user topic, then build cursor tracking, scroll stories, motion graphics and controllable media with composition and QA.",
+      "skills": [
+        "visual-engineering-intelligence",
+        "interactive-motion",
+        "cinematic-web",
+        "visual-direction",
+        "visual-composition",
+        "visual-qa"
+      ],
+      "references": [
+        "interactive-motion/references/topic-and-motion.md",
+        "interactive-motion/references/cursor-choreography.md",
+        "interactive-motion/references/media-scrubbing.md",
+        "interactive-motion/references/motion-graphics.md",
+        "visual-composition/references/type-color-layout.md",
+        "cinematic-web/references/storyboard-and-rendering.md",
+        "cinematic-web/references/scroll-and-camera.md",
+        "cinematic-web/references/motion-verification.md",
+        "interactive-motion/references/asset-preparation.md",
+        "interactive-motion/references/object-tracking.md",
+        "interactive-motion/references/scroll-image-sequences.md",
+        "visual-direction/references/luxury-editorial-direction.md"
+      ]
+    },
+    {
+      "name": "luxury-cinematic",
+      "description": "Product-specific luxury/editorial direction, cursor and scroll media, recorded sequences, real object motion and cinematic verification.",
+      "skills": [
+        "visual-engineering-intelligence",
+        "visual-direction",
+        "visual-composition",
+        "interactive-motion",
+        "cinematic-web",
+        "threejs-engineering",
+        "motion-intelligence",
+        "visual-qa"
+      ],
+      "references": [
+        "visual-direction/references/luxury-editorial-direction.md",
+        "visual-composition/references/type-color-layout.md",
+        "interactive-motion/references/topic-and-motion.md",
+        "interactive-motion/references/cursor-choreography.md",
+        "interactive-motion/references/media-scrubbing.md",
+        "interactive-motion/references/scroll-image-sequences.md",
+        "interactive-motion/references/asset-preparation.md",
+        "interactive-motion/references/object-tracking.md",
+        "interactive-motion/references/motion-graphics.md",
+        "cinematic-web/references/storyboard-and-rendering.md",
+        "cinematic-web/references/scroll-and-camera.md",
+        "cinematic-web/references/motion-verification.md"
+      ]
+    },
+    {
+      "name": "premium-ui",
+      "description": "Choose a distinctive visual language, typography and color themes, then build complete responsive UI, interaction, accessible motion and visual QA.",
+      "skills": [
+        "visual-engineering-intelligence",
+        "visual-direction",
+        "visual-composition",
+        "interaction-design",
+        "responsive-composition",
+        "visual-accessibility",
+        "motion-intelligence",
+        "visual-qa"
+      ],
+      "references": [
+        "visual-direction/references/brief-to-design-decisions.md",
+        "visual-direction/references/visual-languages-and-themes.md",
+        "visual-direction/references/luxury-editorial-direction.md",
+        "visual-composition/references/type-color-layout.md",
+        "interaction-design/references/state-and-interruption.md",
+        "responsive-composition/references/content-driven-responsive.md",
+        "motion-intelligence/references/timing-and-interruption.md",
+        "rendering-judgment/references/compositing-and-blending.md",
+        "visual-qa/references/quality-evidence.md",
+        "visual-qa/references/render-and-playback.md"
+      ]
+    },
+    {
+      "name": "product-3d",
+      "description": "Construct and inspect real 3D products with geometry, hierarchy, assembly/disassembly, materials, lighting, camera, compositing and Three.js lifecycle.",
+      "skills": [
+        "threejs-engineering",
+        "geometric-reasoning",
+        "object-structure",
+        "assembly-choreography",
+        "material-reasoning",
+        "lighting-design",
+        "camera-composition",
+        "rendering-judgment"
+      ],
+      "references": [
+        "threejs-engineering/references/scene-lifecycle.md",
+        "threejs-engineering/references/assets-and-rendering.md",
+        "threejs-engineering/references/input-and-interface.md",
+        "object-structure/references/canonical-poses.md",
+        "motion-intelligence/references/timing-and-interruption.md",
+        "rendering-judgment/references/compositing-and-blending.md",
+        "responsive-composition/references/content-driven-responsive.md",
+        "visual-qa/references/quality-evidence.md",
+        "visual-qa/references/render-and-playback.md"
+      ]
+    }
+  ]
+}

@@ -73,6 +73,8 @@ Handle zero-length paths, coincident control points, closing seams, end caps, an
 
 ## Preserve form across representations
 
+For procedural construction, choose a representation that expresses the governing shape: an extruded profile for constant sections, a lathed profile for rotational forms, a curve for a cable, repeated shared geometry for identical modules, or an authored asset for complex surfaces. A primitive blockout can establish mass and proportion; refine or replace it when the required silhouette, openings, or close view exceeds what it can represent. Use [Three.js engineering](../threejs-engineering/SKILL.md) when implementing those choices in a browser scene.
+
 Keep construction parameters, semantic hierarchy, and editable source when continued editing is part of the deliverable. Derive simplified presentation geometry without silently discarding the relationships needed for future changes.
 
 When transferring or simplifying a representation, compare a known dimension, axis orientation, part identity, surface orientation, pattern scale, attachment frames, and required articulation. Apply coordinate or scale conversion deliberately once. A structurally valid transferred object can still lose material response, motion, or appearance; inspect it in the intended presentation before claiming parity.

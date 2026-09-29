@@ -1,11 +1,13 @@
 ---
 name: visual-reconstruction
-description: Recreate or match screenshots, reference images, recordings, sketches, and existing visual designs. Use for faithful interface or scene reproduction, visual discrepancy correction, and reference-inspired adaptation; recover composition, geometry, perspective, typography, materials, and motion while distinguishing observations from inference.
+description: Reconstruct interfaces or scenes from screenshots, images, recordings, or sketches. Use for faithful reproduction, measured discrepancy correction, or reference-based adaptation while distinguishing observations from inference.
 ---
 
 # Visual Reconstruction
 
 Recover the visual relationships that produce the reference's effect. Match the requested fidelity: faithful reconstruction and inspired adaptation require different decisions.
+
+For a measured match or a stalled comparison loop, load [matched-view comparison](references/matched-view-comparison.md) to normalize capture conditions, record landmarks, isolate shared causes, and evaluate motion from temporal evidence.
 
 ## Inspect actual evidence
 

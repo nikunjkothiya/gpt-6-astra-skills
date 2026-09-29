@@ -1,11 +1,13 @@
 ---
 name: visual-composition
-description: Design or improve interface and page layouts through hierarchy, grids, proportion, typography, spacing, imagery, color, and depth. Use when building screens, composing dense information, polishing visual systems, or correcting layouts that feel generic, busy, empty, or unbalanced.
+description: Compose page and interface layouts through hierarchy, typography, grids, spacing, imagery, color, and depth. Use for screen design, dense information, visual polish, or layouts that feel busy, empty, or unbalanced.
 ---
 
 # Visual Composition
 
 Make relationships legible at the scale of the whole experience. Individually polished elements can still compete, imply false equivalence, or produce a monotonous whole.
+
+When translating a composition into browser styles, load [type, color, and layout implementation](references/type-color-layout.md) for conditional CSS patterns, palette decisions, and diagnosis with actual content. Adapt its examples to the project's identity and supported browsers.
 
 ## Assign roles before containers
 

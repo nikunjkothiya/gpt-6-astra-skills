@@ -7,6 +7,8 @@ description: Critique, visually inspect, and refine interfaces, images, objects,
 
 Judge the rendered experience against product intent and delivery conditions. Successful construction, attractive source structure, or a captured image that has not been viewed cannot establish visual quality.
 
+For reference matching, difficult visual regressions, or motion with interruption and return behavior, load [render and playback checks](references/render-and-playback.md). For a substantial final review or comparison between implementations, load [quality evidence and acceptance](references/quality-evidence.md). Use the relevant procedure; a local spacing repair does not require the full evaluation protocol.
+
 ## Choose evidence for the artifact
 
 For a local visual repair, inspect the affected relationship and adjacent conditions that share it. For a substantial experience, inspect the main journey, relevant states, and meaningfully different compositions. Do not require unrelated disciplines for a narrow change.

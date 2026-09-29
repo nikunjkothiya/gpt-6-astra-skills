@@ -1,11 +1,13 @@
 ---
 name: interaction-design
-description: Design controls, navigation, forms, dialogs, selection, loading, feedback, drag interactions, and micro-interactions. Use when building interactive visual experiences or fixing unclear affordances, misleading states, layout jumps, lost context, and interrupted actions; coordinate expressive motion without delaying the task.
+description: Design control behavior, selection, forms, feedback, and object manipulation. Use when interactions need clear states, dependable interruption, failure recovery, or continuity between interface and scene.
 ---
 
 # Interaction Design
 
 Define what the user changes, what acknowledges input, what establishes the result, and what remains stable. Visual feedback must describe the actual state of the task.
+
+For asynchronous selection, repeated input, or transitions that can be interrupted, load [state and interruption implementation](references/state-and-interruption.md). It contains an action contract, a tested latest-selection pattern, motion ownership rules, and observable failure cases.
 
 ## Establish the action contract
 

@@ -60,6 +60,8 @@ For authored progress-driven sequences, derive each state from a stable progress
 
 ## Reduced movement and inspection
 
+For implementation of elapsed-time response, velocity-preserving retargeting, exact settling, and canonical progress, read [timing and interruption](references/timing-and-interruption.md). For browser 3D scheduling and control integration, use [Three.js engineering](../threejs-engineering/SKILL.md).
+
 Design an alternative with stable positions, direct state changes, or restrained nonspatial feedback. Preserve selection, relationship, progress, and completion meaning. Slowing a long camera journey can prolong discomfort; reducing its travel or replacing it may be more appropriate.
 
 Inspect playback at intended speed, repeated input, mid-transition reversal, release, cancellation, and settling. End-state images cannot reveal poor timing, stutter, velocity discontinuities, or attention competition. Fix a delayed response in the interaction contract, a wrong pivot in object structure, and meaningless movement in the motion decision before adjusting easing.

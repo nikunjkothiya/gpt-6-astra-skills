@@ -1,11 +1,13 @@
 ---
 name: responsive-composition
-description: Adapt interfaces and visual experiences across mobile, tablet, desktop, resized windows, orientation, enlarged text, and changing input conditions. Use when building responsive layouts or correcting overflow, crowded controls, endless stacks, lost comparisons, and poorly framed subjects.
+description: Adapt layouts, controls, and spatial views to available space, enlarged text, and input conditions. Use for responsive implementation or overflow, crowded controls, lost comparisons, and poor object framing.
 ---
 
 # Responsive Composition
 
 Preserve identity, task intent, and required information across conditions. The same relationships may need different placements, framing, or navigation when available space changes.
+
+When implementing or validating adaptation, load [content-driven responsive verification](references/content-driven-responsive.md) for a container-based layout example, usable-region accounting, and a compact matrix that exposes intermediate failures.
 
 ## Identify invariants and freedoms
 

@@ -1,6 +1,6 @@
 ---
 name: visual-engineering-intelligence
-description: Design, build, redesign, or polish websites, apps, interfaces, animations, rendered objects, and spatial experiences. Use as the entrypoint when visual work spans several disciplines or the request asks for a beautiful, premium, distinctive, or accurate result. Route narrow changes to the relevant specialist; exclude nonvisual maintenance.
+description: Coordinate substantial website, interface, motion, and 3D design or implementation. Use for work spanning visual disciplines; route narrow repairs directly to their specialist.
 ---
 
 # Visual Engineering Intelligence
@@ -15,7 +15,17 @@ Select capabilities from the artifact and its affected relationships, even when 
 
 For substantial interface work, resolve composition, interaction, responsive behavior, accessibility, and visual QA. Add direction when identity is open, motion when movement has a defined role, and performance when complexity or response warrants it. For object presentation, resolve geometry, material, lighting, camera, and rendering. Add object structure for connected or articulated parts, and assembly for release, insertion, or exploded presentation. Spatial interaction additionally needs placement, input zones, and accessible task equivalents.
 
+The `premium-ui` bundle groups the complete interface foundations, including responsive and accessibility bodies. The `product-3d` bundle groups scene construction, assembly/disassembly, materials, lighting, framing and rendering. Use these as bounded starting selections through MCP or text export; load further bodies by unresolved decision. For different visual tastes or theme variations read [visual languages and themes](../visual-direction/references/visual-languages-and-themes.md); for layer, alpha and glass problems read [compositing and blending](../rendering-judgment/references/compositing-and-blending.md).
+
 Start reference-driven work with reconstruction. Add storytelling when order changes what the viewer learns. For a narrow repair, load its responsible capability and inspect only the affected relationships. Do not activate every specialist for every task, and do not omit a relevant one merely because the user did not name its discipline.
+
+Use [Three.js engineering](../threejs-engineering/SKILL.md) when implementing a browser 3D scene with Three.js or React Three Fiber. It supplies the execution patterns that translate geometry, motion, and rendering decisions into a working scene. Read linked implementation references only when their stated condition applies.
+
+For cinematic websites, scroll-directed scenes, shader experiences, or film-like sequences, use [cinematic web](../cinematic-web/SKILL.md). Produce its numeric motion storyboard before implementation, choose the rendering medium, and verify deterministic states and actual playback. Ordinary small interface transitions do not need the cinematic workflow.
+
+When the user requests motion graphics, cursor tracking, scroll effects, GIF/video motion or an animated UI based on a topic, use [interactive motion](../interactive-motion/SKILL.md). Resolve the topic's audience, primary action, hierarchy and motion role before picking effects. Its named `interactive-motion` bundle supplies the common selection, implementation and verification bodies together; keep deeper references selective.
+
+For luxury, premium or editorial work, use [luxury editorial direction](../visual-direction/references/luxury-editorial-direction.md) to translate the subject and audience into composition, typography, imagery and motion character. The named `luxury-cinematic` bundle combines this with recorded sequences, cursor object control, Three.js and QA. Work in the user's actual project; these bundles supply reusable decisions and algorithms, not a fixed design template.
 
 ## Establish the contract
 
@@ -51,6 +61,11 @@ Keep the skill folders as siblings when relocating the suite so relative links r
 | Which costs can be reduced while preserving perceptual value and response? | [Visual performance](../visual-performance/SKILL.md) |
 | How are meaning and task access preserved across sensory and input needs? | [Visual accessibility](../visual-accessibility/SKILL.md) |
 | What is visibly wrong, what matters most, and what correction is supported? | [Visual QA](../visual-qa/SKILL.md) |
+| How does a Three.js scene load, render, respond, resize, and release its resources? | [Three.js engineering](../threejs-engineering/SKILL.md) |
+| How do scroll, camera, shaders, 3D components and DOM form a directed, measurable sequence? | [Cinematic web](../cinematic-web/SKILL.md) |
+| Which movement fits this topic, and how do cursor, scroll, graphics and recorded media respond correctly? | [Interactive motion](../interactive-motion/SKILL.md) |
+
+For substantial construction, read [the delivery workflow](references/delivery-workflow.md) to establish a compact working specification and acceptance decisions. For a host without skill discovery or browser tools, read [capability and loading adaptations](references/host-capabilities.md). Neither reference is required for an ordinary narrow repair.
 
 ## Work in dependency order
 

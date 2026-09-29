@@ -65,6 +65,8 @@ For free part inspection, define a return-to-sequence handoff before dependent p
 
 ## Acceptance and repair
 
+For implementation, use the [canonical pose reference](../object-structure/references/canonical-poses.md) when mapping sequence intervals to stable transforms, and the [timing reference](../motion-intelligence/references/timing-and-interruption.md) when retargeting or scrubbing. A progress function establishes repeatable poses; inspect swept clearance separately. Sample near release boundaries and at angular extrema, increasing resolution around close fits. Discrete collision-free samples provide bounded visual evidence, not a continuous collision guarantee.
+
 Inspect the assembled view, release moments, path extrema, exploded view, inspection handoffs, and full return in motion. Confirm clear connections, readable correspondences, preserved linked parts, unobstructed paths, and exact endpoint relationships.
 
 If parts appear to burst outward, restore insertion axes and dependency phases. If the view becomes a cloud of fragments, preserve subassemblies and reduce simultaneous events. If reassembly nearly fits, repair transform integrity. If users cannot infer the construction, improve the active relationship's framing and sequence before adding labels or more motion.

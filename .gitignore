@@ -32,6 +32,9 @@
 !/scripts/export.mjs
 !/scripts/reference-runtime.mjs
 !/scripts/validate.mjs
+!/scripts/tokens.mjs
+!/scripts/audit.mjs
+!/scripts/capture.mjs
 !/tests/
 !/tests/content.test.mjs
 !/tests/interaction-code.test.mjs
@@ -39,6 +42,9 @@
 !/tests/mcp.test.mjs
 !/tests/reference-code.test.mjs
 !/tests/sequence-recipes.test.mjs
+!/tests/tokens.test.mjs
+!/tests/creative-recipes.test.mjs
+!/tests/audit-capture.test.mjs
 
 # Skill entrypoints and their registered Markdown references.
 # npm run validate checks registration, metadata and reference links.

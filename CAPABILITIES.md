@@ -7,6 +7,13 @@ Use this map to select full skill bodies for the user's requirements. It records
 | Requirement | Owning skills and detailed guidance | Evidence in the target project |
 | --- | --- | --- |
 | Different visual tastes and premium identity | [Visual direction](skills/visual-direction/SKILL.md), [visual languages and themes](skills/visual-direction/references/visual-languages-and-themes.md), [luxury editorial direction](skills/visual-direction/references/luxury-editorial-direction.md) | Real subject, copy and action express the chosen thesis across opening, ordinary states and mobile |
+| Original concept and studio critique | [Award craft](skills/award-craft/SKILL.md), [studio process](skills/award-craft/references/studio-process.md), [jury rubric](skills/award-craft/references/jury-rubric.md) | Distinct alternatives where needed; chosen idea visible in real content; findings and matched rechecks |
+| Detailed type selection and loading | [Typography system](skills/typography-system/SKILL.md) | Real text in loaded fonts, required languages, zoom, wraps and fallback metrics |
+| Role palettes and color verification | [Color system](skills/color-system/SKILL.md), [palette library](skills/color-system/references/palette-library.md) | Declared contrast pairs pass; actual composited states and theme surfaces remain readable |
+| Reusable tokens and grids | [Design tokens](skills/design-tokens/SKILL.md) | Generated values match the spec; scoped themes, content-driven layout and reduced motion work |
+| Component and data UI craft | [Component craft](skills/component-craft/SKILL.md), [data tables](skills/component-craft/references/data-tables.md) | Native semantics, complete states, stable selection, sorting, task completion and mobile comparison |
+| Motion stack implementation | [Motion engineering](skills/motion-engineering/SKILL.md) | Integration, cleanup, interruption, deterministic capture and actual playback |
+| Procedural visual direction | [Procedural WebGL](skills/procedural-webgl/SKILL.md) | Useful effect with measured rendering cost, correct spaces/color and complete DOM/static fallback |
 | Typography, palette, spacing and hierarchy | [Visual composition](skills/visual-composition/SKILL.md), [type/color/layout](skills/visual-composition/references/type-color-layout.md) | Loaded fonts, meaningful wraps, semantic colors, consistent density and theme contrast |
 | Complete UI and interruptions | [Interaction design](skills/interaction-design/SKILL.md), [state and interruption](skills/interaction-design/references/state-and-interruption.md) | Navigation, loading, empty/error/retry, selection, focus and final actions work |
 | Motion laws and physical character | [Motion intelligence](skills/motion-intelligence/SKILL.md), [timing and interruption](skills/motion-intelligence/references/timing-and-interruption.md) | Correct units, retargeting, continuity, exact settle and actual playback |
@@ -39,6 +46,7 @@ Use this map to select full skill bodies for the user's requirements. It records
 | Bundle | Use when | Scope |
 | --- | --- | --- |
 | `premium-ui` | Establishing a complete premium interface across devices | 8 skills and 10 references: direction, visual language, composition, interaction, motion, responsiveness, accessibility and QA |
+| `award-ui` | Original flagship, editorial, portfolio or launch work | 8 skills and 10 references: concept development, typography, color, tokens, components and critique; combine with `premium-ui` for delivery foundations |
 | `interactive-motion` | Implementing graphics, cursor/scroll or recorded-media behavior | 6 skills and 12 references: medium selection, preparation, controllers, cinematic progress and verification |
 | `luxury-cinematic` | Directing a luxury/editorial cinematic experience | 8 skills and 12 references: visual finish, media, live objects and story choreography |
 | `product-3d` | Constructing, lighting, assembling or inspecting a real 3D product | 8 skills and 9 references: geometry, structure, assembly, material, light, camera, rendering and Three.js execution |
@@ -49,4 +57,4 @@ For limited context, start with the coordinator and catalog, then load direction
 
 ## Audit scope
 
-The September 29, 2026 audit reviewed skill entrypoints, references, prompts, installer, catalog, MCP loading, exports, package scripts and tests against the requested capabilities. It added detailed visual-language/theme and compositing guidance, focused bundles and corrected packaging/verification guidance. See [package validation](PACKAGE-VALIDATION.md) for checks actually run and their limits. This map establishes retrievable coverage, not universal model ability or award quality.
+The September 30, 2026 audit integrates 29 skills, 57 references and five bundles, including the creative craft additions and optional token/audit/capture helpers. It repairs missing routes, package exclusions, contradictory creative rules and specific reference-code defects. See [package validation](PACKAGE-VALIDATION.md) for observed checks and limits. This map establishes retrievable coverage, not universal model ability or award quality.

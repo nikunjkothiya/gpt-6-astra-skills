@@ -44,13 +44,13 @@
     {
       "name": "interactive-motion",
       "references": [
-        "references/topic-and-motion.md",
+        "references/asset-preparation.md",
         "references/cursor-choreography.md",
         "references/media-scrubbing.md",
         "references/motion-graphics.md",
-        "references/asset-preparation.md",
         "references/object-tracking.md",
-        "references/scroll-image-sequences.md"
+        "references/scroll-image-sequences.md",
+        "references/topic-and-motion.md"
       ]
     },
     {
@@ -107,8 +107,11 @@
     {
       "name": "visual-direction",
       "references": [
+        "references/anti-generic-patterns.md",
         "references/brief-to-design-decisions.md",
         "references/luxury-editorial-direction.md",
+        "references/site-archetypes.md",
+        "references/trend-radar-2026.md",
         "references/visual-languages-and-themes.md"
       ]
     },
@@ -132,6 +135,62 @@
     {
       "name": "visual-storytelling",
       "references": []
+    },
+    {
+      "name": "award-craft",
+      "references": [
+        "references/jury-rubric.md",
+        "references/polish-checklist.md",
+        "references/studio-process.md",
+        "references/worked-example.md"
+      ]
+    },
+    {
+      "name": "color-system",
+      "references": [
+        "references/color-science.md",
+        "references/palette-library.md"
+      ]
+    },
+    {
+      "name": "component-craft",
+      "references": [
+        "references/buttons-links-cursor.md",
+        "references/commerce.md",
+        "references/data-tables.md",
+        "references/forms-overlays-feedback.md",
+        "references/heroes-and-sections.md",
+        "references/media-and-galleries.md",
+        "references/navigation.md"
+      ]
+    },
+    {
+      "name": "design-tokens",
+      "references": [
+        "references/layout-and-grid.md",
+        "references/token-architecture.md"
+      ]
+    },
+    {
+      "name": "motion-engineering",
+      "references": [
+        "references/deterministic-render.md",
+        "references/easing-and-timing.md",
+        "references/page-transitions.md",
+        "references/scroll-patterns.md",
+        "references/stack-and-integration.md"
+      ]
+    },
+    {
+      "name": "procedural-webgl",
+      "references": []
+    },
+    {
+      "name": "typography-system",
+      "references": [
+        "references/fluid-and-kinetic-type.md",
+        "references/font-library.md"
+      ]
     }
   ],
   "bundles": [
@@ -236,6 +295,32 @@
         "motion-intelligence/references/timing-and-interruption.md",
         "rendering-judgment/references/compositing-and-blending.md",
         "responsive-composition/references/content-driven-responsive.md",
+        "visual-qa/references/quality-evidence.md",
+        "visual-qa/references/render-and-playback.md"
+      ]
+    },
+    {
+      "name": "award-ui",
+      "description": "Subject-specific creative direction, typography, color, tokens, component craft and evidence-based critique. Combine with premium-ui for complete responsive and accessible delivery.",
+      "skills": [
+        "visual-engineering-intelligence",
+        "award-craft",
+        "visual-direction",
+        "typography-system",
+        "color-system",
+        "design-tokens",
+        "component-craft",
+        "visual-qa"
+      ],
+      "references": [
+        "award-craft/references/studio-process.md",
+        "award-craft/references/jury-rubric.md",
+        "visual-direction/references/anti-generic-patterns.md",
+        "visual-direction/references/brief-to-design-decisions.md",
+        "typography-system/references/font-library.md",
+        "color-system/references/palette-library.md",
+        "design-tokens/references/token-architecture.md",
+        "component-craft/references/heroes-and-sections.md",
         "visual-qa/references/quality-evidence.md",
         "visual-qa/references/render-and-playback.md"
       ]

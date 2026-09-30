@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, writeFile, rm, symlink, readFile, access, realpath } from 'node:fs/promises';
+import { mkdtemp, mkdir, writeFile, rm, symlink, readFile, access, realpath, stat } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { resolve, join, dirname, basename } from 'node:path';
 import { randomUUID } from 'node:crypto';
@@ -150,6 +150,11 @@ test('distribution stages in a new root child, preserves content and rejects sou
   assert.equal(lock.version, manifest.version);
   assert.equal(lock.packages[''].version, manifest.version);
   for (const path of manifest.files) await access(join(target, path));
+  for (const path of source.metadata.files) {
+    const original = join(PACKAGE_ROOT, path);
+    await access(join(target, path));
+    if ((await stat(original)).isFile()) assert.deepEqual(await readFile(join(target, path)), await readFile(original), `Distribution preserves ${path}`);
+  }
   for (const path of ['node_modules', 'artifacts', 'examples', '.git']) await assert.rejects(access(join(target, path)), { code: 'ENOENT' });
   assert.equal(run(name).status, 1, 'Existing directory must remain intact');
   for (const folder of ['skills', 'scripts', 'mcp', 'tests']) {

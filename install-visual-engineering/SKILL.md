@@ -7,7 +7,7 @@ description: Add the Visual Engineering Intelligence skill suite and local MCP s
 
 This package is host-neutral. It has three integration surfaces:
 
-- `skills/` contains twenty-two sibling skills, each with a `SKILL.md` entrypoint, plus selectively loaded supporting references.
+- `skills/` contains twenty-nine sibling skills, each with a `SKILL.md` entrypoint, plus selectively loaded supporting references.
 - `mcp/server.mjs` is a local, read-only MCP server that serves the same instructions through standard input/output.
 - `scripts/export.mjs` prints selected Markdown bodies for hosts that accept text context without native discovery or MCP.
 
@@ -17,9 +17,9 @@ Inspect the target host's supported skill-discovery mechanism, MCP transport, co
 
 ## Add the native skills
 
-Point the host's skill discovery directory, plugin loader, or workspace configuration at `<package-root>/skills`. It must expose all twenty-two subdirectories as individual skills, preserving their names, sibling relationship, and reference files. The coordinator is `visual-engineering-intelligence`; it selects the relevant specialists. A host that supports only one instruction file can receive a selected context bundle from the exporter.
+Point the host's skill discovery directory, plugin loader, or workspace configuration at `<package-root>/skills`. It must expose all twenty-nine subdirectories as individual skills, preserving their names, sibling relationship, and reference files. The coordinator is `visual-engineering-intelligence`; it selects the relevant specialists. A host that supports only one instruction file can receive a selected context bundle from the exporter.
 
-The native route has no runtime dependency. It is sufficient when the host can discover and read `SKILL.md` files. Do not register a second copy at another precedence level unless the host requires it; duplicate copies cause conflicting instructions and unclear updates.
+The native instruction route has no runtime dependency. Optional helpers live at `<package-root>/scripts`, not in the target project; use their absolute paths. Token/audit helpers need Node; capture additionally needs a host/project Playwright installation and browser. MCP serves their instructions without executing them. It is sufficient when the host can discover and read `SKILL.md` files. Do not register a second copy at another precedence level unless the host requires it; duplicate copies cause conflicting instructions and unclear updates.
 
 ## Add the local MCP server
 
@@ -51,7 +51,7 @@ On Windows PowerShell, use `npm.cmd` if execution policy blocks the `npm.ps1` la
 
 ## Supply text context
 
-Run `node scripts/export.mjs` for the coordinator and catalog. Use `--bundle premium-ui` for complete responsive interface foundations, `--bundle interactive-motion` for the motion/media workflow, `--bundle luxury-cinematic` for editorial cinematic work, or `--bundle product-3d` for geometry, assembly, materials, lighting and rendering. Repeated `--bundle` flags deduplicate shared bodies. Add `--skill NAME` and `--reference ID` for further task-specific bodies; exact IDs appear in the catalog. Copy the output into the host's context or instruction mechanism. The exporter needs Node 20+ but no installed dependencies. A person can copy the files directly without Node. Use `--all` only when the context budget supports the entire suite; otherwise load in stages while preserving concrete project decisions.
+Run `node scripts/export.mjs` for the coordinator and catalog. Use `--bundle award-ui --bundle premium-ui` for original creative UI plus delivery foundations, `--bundle premium-ui` for complete responsive interface foundations, `--bundle interactive-motion` for the motion/media workflow, `--bundle luxury-cinematic` for editorial cinematic work, or `--bundle product-3d` for geometry, assembly, materials, lighting and rendering. Repeated `--bundle` flags deduplicate shared bodies. Add `--skill NAME` and `--reference ID` for further task-specific bodies; exact IDs appear in the catalog. Copy the output into the host's context or instruction mechanism. The exporter needs Node 20+ but no installed dependencies. A person can copy the files directly without Node. Use `--all` only when the context budget supports the entire suite; otherwise load in stages while preserving concrete project decisions.
 
 Loading text does not supply file editing or visual inspection. Report these host capabilities accurately and preserve the user's scope.
 

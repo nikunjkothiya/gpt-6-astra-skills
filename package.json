@@ -1,6 +1,6 @@
 {
   "name": "visual-engineering-intelligence",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "private": true,
   "description": "Portable visual engineering skills, implementation references, and a read-only MCP server.",
   "type": "module",
@@ -34,7 +34,13 @@
     "tests/interaction-code.test.mjs",
     "tests/interactive-motion.test.mjs",
     "tests/sequence-recipes.test.mjs",
-    "package-lock.json"
+    "package-lock.json",
+    "scripts/tokens.mjs",
+    "scripts/audit.mjs",
+    "scripts/capture.mjs",
+    "tests/tokens.test.mjs",
+    "tests/creative-recipes.test.mjs",
+    "tests/audit-capture.test.mjs"
   ],
   "dependencies": {
     "@modelcontextprotocol/server": "2.0.0",

@@ -1,6 +1,6 @@
 # Visual Engineering Intelligence
 
-Visual Engineering Intelligence is a portable set of instructions for designing and building websites, interfaces, cinematic motion, and interactive 3D. It helps an LLM choose a visual direction from the **actual project brief**, implement the relevant behavior, and check the result. Version **1.3.0** contains **22 skills, 32 supporting references, and four ready-to-load bundles**.
+Visual Engineering Intelligence is a portable set of instructions for designing and building websites, interfaces, cinematic motion, and interactive 3D. It helps an LLM choose a visual direction from the **actual project brief**, implement the relevant behavior, and check the result. Version **1.4.0** contains **29 skills, 57 supporting references, and five ready-to-load bundles**.
 
 Use it with an LLM that can read local skills, connect to a local MCP server, or accept Markdown as context. The package supplies guidance and implementation recipes; the host's tools perform the editing, asset work, and visual inspection in your project.
 
@@ -56,6 +56,7 @@ Run these commands from the package root and supply the printed output to your L
 
 ```sh
 node scripts/export.mjs --bundle premium-ui
+node scripts/export.mjs --bundle award-ui --bundle premium-ui
 node scripts/export.mjs --bundle interactive-motion
 node scripts/export.mjs --bundle luxury-cinematic
 node scripts/export.mjs --bundle product-3d
@@ -79,6 +80,7 @@ node scripts/export.mjs --skill threejs-engineering --reference threejs-engineer
 
 | Bundle | Starting point for | Included instructions |
 | --- | --- | --- |
+| `award-ui` | Original flagship, editorial, portfolio or launch design; combine with `premium-ui` | Creative direction, concept comparison, typography, checked palettes, tokens, component craft and critique |
 | `premium-ui` | A complete, responsive interface | Visual direction, typography, color and theme decisions, interaction states, mobile composition, accessibility, motion, and visual QA |
 | `interactive-motion` | Motion graphics, cursor effects, scroll behavior, GIF/video, and image sequences | Topic-to-motion selection, pointer mapping, media preparation, scrubbing, frame caches, cinematic progress, and verification |
 | `luxury-cinematic` | An editorial or luxury site with directed motion | Subject-led art direction, cinematic storytelling, recorded media, object response, and motion verification |
@@ -122,14 +124,30 @@ For a directed scene, the [cinematic build prompt](prompts/cinematic-build.md) a
 
 | Path | Purpose |
 | --- | --- |
-| `skills/` | 22 independently usable skill entrypoints and 32 supporting references |
+| `skills/` | 29 independently usable skill entrypoints and 57 supporting references |
 | `mcp/` | Catalog and local read-only MCP server |
 | `prompts/` | Reusable task prompts for broad design and cinematic builds |
 | `scripts/export.mjs` | Prints selected full instructions for text-only hosts |
+| `scripts/tokens.mjs` | Checks declared color pairs and generates fluid scales, springs and CSS tokens |
+| `scripts/audit.mjs`, `scripts/capture.mjs` | Optional source heuristics and browser evidence collection |
 | `install-visual-engineering/SKILL.md` | Host installation and activation guidance |
 | `tests/`, `scripts/validate.mjs` | Package and reference-code verification |
 
 The repository ships instructions and code recipes. It does not contain a website template, media library, or a rendered example site. The user's project supplies the content and assets. The host must provide the tools needed to edit code, prepare media, browse, and inspect rendered results.
+
+## Creative craft and optional helpers
+
+For an original site, combine `award-ui` with `premium-ui`. The creative workflow compares directions using real content, develops a representative opening, ordinary section and working action, then fixes observed weaknesses. Existing products preserve useful brand and interaction conventions. Creativity can live in a data comparison or a still composition as well as motion.
+
+The helper paths in skills are relative to this package. From a target project, use its absolute package location:
+
+```sh
+node "<package-root>/scripts/tokens.mjs" contrast "#111111" "#ffffff"
+node "<package-root>/scripts/audit.mjs" .
+node "<package-root>/scripts/capture.mjs" --url http://localhost:3000 --out captures-review-1
+```
+
+Replace `<package-root>` with the real path. Tokens and source audit need only Node. Capture requires Playwright (or playwright-core / @playwright/test) and a usable browser provided by the project or host; neither is a package dependency. Read each command's `--help`. Capture requires a new output directory with an existing parent. Its source checks, sampled screenshots and lab observations support review; they do not certify aesthetics, WCAG conformance, field performance or physical-device smoothness. The MCP server remains read-only and does not execute helpers.
 
 ## Check or build the package
 

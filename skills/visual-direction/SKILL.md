@@ -11,6 +11,8 @@ For a new concept or substantial redesign, load [brief to design decisions](refe
 
 When choosing among visual styles or developing color/theme and typography variations, read [visual languages and themes](references/visual-languages-and-themes.md). Resolve those choices from the actual content and audience, then carry the selected system through ordinary UI states.
 
+For an open premium brief, use [site archetypes](references/site-archetypes.md) to compare relevant structures. The [trend radar 2026](references/trend-radar-2026.md) offers dated design hypotheses and a method for checking platform support. Use [anti-generic patterns](references/anti-generic-patterns.md) to challenge unexamined defaults while preserving useful conventions and supplied identity. For deeper concept development and critique, use [award craft](../award-craft/SKILL.md).
+
 ## Find the product's visual opportunity
 
 For premium, luxury or editorial briefs, load [luxury editorial direction](references/luxury-editorial-direction.md) to resolve subject, typography, palette, imagery, motion character and finish from the product's evidence. Apply it to the actual project rather than importing a page template.

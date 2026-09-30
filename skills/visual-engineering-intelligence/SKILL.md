@@ -19,6 +19,8 @@ The `premium-ui` bundle groups the complete interface foundations, including res
 
 Start reference-driven work with reconstruction. Add storytelling when order changes what the viewer learns. For a narrow repair, load its responsible capability and inspect only the affected relationships. Do not activate every specialist for every task, and do not omit a relevant one merely because the user did not name its discipline.
 
+For original flagship, editorial or launch work, [award craft](../award-craft/SKILL.md) adds concept exploration and critique. The `award-ui` bundle supplies its creative foundations; combine it with `premium-ui` for responsive and accessible delivery. Choose a direction using real content, then test an opening, ordinary section and primary action together. A distinctive still composition or useful data comparison can be the signature; do not require effects or a rebrand to demonstrate creativity.
+
 Use [Three.js engineering](../threejs-engineering/SKILL.md) when implementing a browser 3D scene with Three.js or React Three Fiber. It supplies the execution patterns that translate geometry, motion, and rendering decisions into a working scene. Read linked implementation references only when their stated condition applies.
 
 For cinematic websites, scroll-directed scenes, shader experiences, or film-like sequences, use [cinematic web](../cinematic-web/SKILL.md). Produce its numeric motion storyboard before implementation, choose the rendering medium, and verify deterministic states and actual playback. Ordinary small interface transitions do not need the cinematic workflow.
@@ -44,6 +46,13 @@ Keep the skill folders as siblings when relocating the suite so relative links r
 | Decision | Owning skill |
 | --- | --- |
 | What visual character belongs to this product; what identity survives a redesign? | [Visual direction](../visual-direction/SKILL.md) |
+| Which original concept deserves development, and what does critique show needs refinement? | [Award craft](../award-craft/SKILL.md) |
+| Which typefaces, roles, fluid sizes and loading strategy express the content? | [Typography system](../typography-system/SKILL.md) |
+| Which palette, theme and state colors remain readable in context? | [Color system](../color-system/SKILL.md) |
+| How do shared values become maintainable CSS and component decisions? | [Design tokens](../design-tokens/SKILL.md) |
+| How do navigation, forms, media, commerce and data tables behave and feel complete? | [Component craft](../component-craft/SKILL.md) |
+| How do timelines, scroll patterns and page transitions integrate with the chosen stack? | [Motion engineering](../motion-engineering/SKILL.md) |
+| Can a procedural visual express the idea within the asset and rendering budget? | [Procedural WebGL](../procedural-webgl/SKILL.md) |
 | What leads; how do type, spacing, color, density, and grouping express relationships? | [Visual composition](../visual-composition/SKILL.md) |
 | What can users do; what responds, commits, recovers, and stays stable? | [Interaction design](../interaction-design/SKILL.md) |
 | How should movement start, progress, interrupt, reverse, and settle? | [Motion intelligence](../motion-intelligence/SKILL.md) |

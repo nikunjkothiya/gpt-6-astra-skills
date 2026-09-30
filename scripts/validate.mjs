@@ -5,6 +5,20 @@ import { loadPackage, inside } from '../mcp/content.mjs';
 
 try {
   const pkg = await loadPackage();
+  if (!Array.isArray(pkg.metadata.files)) throw new Error('Package must declare its distribution files.');
+  for (const entry of pkg.metadata.files) {
+    const target = await realpath(resolve(pkg.root, entry));
+    if (!inside(pkg.root, target)) throw new Error(`Distribution entry escapes the package: ${entry}`);
+  }
+  // Commands are executable dependencies too, even when they appear in code fences.
+  for (const doc of pkg.documentsByPath.values()) {
+    for (const match of doc.rawText.matchAll(/\bnode\s+(scripts\/[a-z0-9-]+\.mjs)\b/g)) {
+      const helper = match[1];
+      const target = await realpath(resolve(pkg.root, helper));
+      if (!inside(pkg.root, target) || !(await stat(target)).isFile()) throw new Error(`Missing command helper in ${doc.sourcePath}: ${helper}`);
+      if (!pkg.metadata.files.some(entry => helper === entry || helper.startsWith(`${entry}/`))) throw new Error(`Command helper excluded from distribution: ${helper}`);
+    }
+  }
   async function inspect(folder, prefix) {
     for (const entry of await readdir(folder, { withFileTypes: true })) {
       const id = `${prefix}/${entry.name}`;
@@ -40,7 +54,7 @@ try {
       if (!inside(pkg.root, target) || !(await stat(target)).isFile()) throw new Error(`Invalid local guide link in ${guide}: ${link}`);
     }
   }
-  process.stdout.write(`Validated ${pkg.skills.size} skills, ${pkg.references.size} references, metadata, containment, and ${guides.length} package guides.\n`);
+  process.stdout.write(`Validated ${pkg.skills.size} skills, ${pkg.references.size} references, ${pkg.bundles.size} bundles, distribution helpers, metadata, containment, and ${guides.length} package guides.\n`);
 } catch (error) {
   process.stderr.write(`${error.message}\n`);
   process.exitCode = 1;

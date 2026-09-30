@@ -8,8 +8,10 @@ const selected = [
   'README.md', 'CAPABILITIES.md', 'PACKAGE-VALIDATION.md', 'package-lock.json',
   'install-visual-engineering', 'skills', 'mcp', 'prompts',
   'scripts/export.mjs', 'scripts/validate.mjs', 'scripts/reference-runtime.mjs', 'scripts/build-package.mjs',
+  'scripts/tokens.mjs', 'scripts/audit.mjs', 'scripts/capture.mjs',
   'tests/content.test.mjs', 'tests/mcp.test.mjs', 'tests/reference-code.test.mjs',
   'tests/interaction-code.test.mjs', 'tests/interactive-motion.test.mjs', 'tests/sequence-recipes.test.mjs',
+  'tests/tokens.test.mjs', 'tests/creative-recipes.test.mjs', 'tests/audit-capture.test.mjs',
 ];
 try {
   const args = process.argv.slice(2);
